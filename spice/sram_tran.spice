@@ -1,0 +1,39 @@
+** sch_path: /home/thilak-t/Desktop/Sram_Dram/sram_tran.sch
+**.subckt sram_tran BLB WL BL QB Q vdd
+*.ipin BLB
+*.ipin WL
+*.ipin BL
+*.opin QB
+*.opin Q
+*.ipin vdd
+XM1 QB Q gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XM2 Q QB vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM3 QB Q vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM4 Q QB gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XM5 BLB WL QB gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XM6 BL WL Q gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+V1 vdd gnd dc 1.8
+V2 BLB gnd PULSE(1.8 0 500p 100p 100p 2.5u 4u)
+V3 BL gnd PULSE(0 1.8 500p 100p 100p 2.5u 4u)
+V5 WL gnd PULSE(0 1.8 1u 100p 100p 2u 4u)
+**** begin user architecture code
+
+
+.ic V(Q)=0 V(QB)=1.8
+.tran 100p 20u
+.control
+run
+plot V(WL)+10 V(BL)+8 V(BLB)+6 V(Q)+4 V(QB)+2
+.endc
+.end
+
+
+.lib /home/thilak-t/Desktop/eda_tools/open_pdks/sky130/sky130A/libs.tech/combined/sky130.lib.spice tt
+**** end user architecture code
+**.ends
+.GLOBAL gnd
+.end

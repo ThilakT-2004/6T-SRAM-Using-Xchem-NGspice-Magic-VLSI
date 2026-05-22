@@ -1,0 +1,30 @@
+** sch_path: /home/thilak-t/Desktop/Sram_Dram/sram_dc.sch
+**.subckt sram_dc BLB WL BL QB Q
+*.ipin BLB
+*.ipin WL
+*.ipin BL
+*.opin QB
+*.opin Q
+XM1 QB Q gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM2 Q QB net1 net1 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM3 QB Q net1 net1 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM4 Q QB gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM5 BLB WL QB gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XM6 Q WL BL gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+V1 net1 gnd 1.8v
+V2 BLB gnd PULSE(1.8 0 0 0 0 0 2u)
+V3 BL gnd PULSE(0 1.8 0 0 0 0 2u)
+V4 QB gnd 1.8v
+V5 WL gnd PULSE(0 1.8 0 0 0 0 4u)
+**** begin user architecture code
+
+
+.dc V4 0 1.8 0.01
+.save all
+
+
+.lib /home/thilak-t/Desktop/eda_tools/open_pdks/sky130/sky130A/libs.tech/combined/sky130.lib.spice tt
+**** end user architecture code
+**.ends
+.GLOBAL gnd
+.end
