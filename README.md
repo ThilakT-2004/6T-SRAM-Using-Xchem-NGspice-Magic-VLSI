@@ -34,10 +34,9 @@ The 6T SRAM cell uses two cross-coupled CMOS inverters (M1–M4) for storage, an
 │   ├── sram_snmW.spice             # Write Static Noise Margin
 │   ├── sram_tran.spice             # Full read/write transient testbench
 │   ├── sram_write.spice            # Write operation testbench
-│   └── write_driver.spice          # Write driver circuit
 ├── results/
 │   ├── schematics/                 # xschem schematic screenshots
-│   └── waveforms/                  # ngspice simulation waveforms
+│   └── Simulation_waveforms/                  # ngspice simulation waveforms
 └── README.md
 ```
 
@@ -119,50 +118,6 @@ Current vs. voltage sweep for combined read stability and writeability analysis.
 
 ---
 
-### 8. Write Driver
-
-Differential write driver that drives BL and BLB to complementary values based on input data (`din`) and write enable (`wen`). Two waveform views shown — zoomed out and zoomed in for transition detail.
-
-| Schematic |
-|-----------|
-| ![Write Driver Schematic](results/schematics/write_driver_schematic.png) |
-
-| Waveform (wide) | Waveform (zoomed) |
-|-----------------|-------------------|
-| ![Write Driver 1](results/waveforms/write_driver_waveform1.png) | ![Write Driver 2](results/waveforms/write_driver_waveform2.png) |
-
----
-
-### 9. Tristate Buffer
-
-Tristate output buffer used in the data bus path. Output is driven high/low when `en` is asserted; floats (high-Z) otherwise. Verified with `en` and `enb` pulse stimulus.
-
-| Schematic | Waveform |
-|-----------|----------|
-| ![Tristate Schematic](results/schematics/tristate_buffer_schematic.png) | ![Tristate Waveform](results/waveforms/tristate_buffer_waveform.png) |
-
----
-
-### 10. Precharge Circuit
-
-Two PMOS transistors precharge BL and BLB to VDD before each read cycle. Controlled by active-low precharge clock (`pclk`). BL/BLB discharge is visible after `pclk` goes high.
-
-| Schematic | Waveform |
-|-----------|----------|
-| ![Precharge Schematic](results/schematics/precharge_schematic.png) | ![Precharge Transient](results/waveforms/precharge_transient.png) |
-
----
-
-### 11. Differential Sense Amplifier
-
-Latch-based differential sense amplifier that detects the small voltage difference on BL/BLB during a read and resolves it to full-swing digital output. Signals shown: `r` (read enable), `bl`, `blb`, `diffout`, `out`.
-
-| Schematic | Waveform |
-|-----------|----------|
-| ![Sense Amp Schematic](results/schematics/sense_amp_schematic.png) | ![Sense Amp Result](results/waveforms/sense_amp_transient.png) |
-
----
-
 ## ⚙️ Requirements
 
 - [ngspice](http://ngspice.sourceforge.net/) (v37+)
@@ -199,8 +154,6 @@ ngspice spice/sram_snmW.spice
 # N-curve
 ngspice spice/sram_ncurve.spice
 
-# Write driver
-ngspice spice/write_driver.spice
 ```
 
 ---
