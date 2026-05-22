@@ -50,7 +50,8 @@ Basic read/write transient over 20 ns showing WL, BL, BLB, Q, QB toggling correc
 
 | Schematic | Waveform |
 |-----------|----------|
-| ![6T SRAM Schematic](results/schematics/6t_sram_schematic.png) | ![6T SRAM Transient](results/waveforms/6t_sram_transient.png) |
+| ![6T SRAM Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/6T_sram.png) |
+| ![6T SRAM Transient](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/6T_sram.png) |
 
 ---
 
@@ -60,11 +61,8 @@ Full transient testbench with piecewise-linear (PWL) WL stimulus and initial con
 
 | Schematic | All Signals | Q & QB Detail |
 |-----------|-------------|----------------|
-| ![sram_tran Schematic](results/schematics/sram_tran_schematic.png) | ![sram_tran Waveform](results/waveforms/sram_tran_waveform.png) | ![sram_write Q/QB](results/waveforms/sram_write_waveform2_QQB.png) |
-
-Write operation waveform showing WL, BL, BLB, Q, QB across 20 µs:
-
-![sram_write Waveform](results/waveforms/sram_write_waveform1.png)
+| ![sram_tran Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_read&write.png) |
+| ![sram_tran Waveform](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_tran.png) |
 
 ---
 
@@ -74,7 +72,8 @@ DC sweep of the storage node showing the bistable VTC (Q and QB crossing at ~0.9
 
 | Schematic | VTC Result |
 |-----------|------------|
-| ![DC Schematic](results/schematics/dc_schematic.png) | ![DC VTC](results/waveforms/dc_vtc_curve.png) |
+| ![DC Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_dc.png) |
+| ![DC VTC](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_dc.png) |
 
 ---
 
@@ -84,7 +83,8 @@ Butterfly curve obtained by double-sweeping both inverter VTCs. The SNM is the s
 
 | Schematic | Butterfly Curve |
 |-----------|-----------------|
-| ![SNM Schematic](results/schematics/snm_schematic.png) | ![SNM Result](results/waveforms/snm_butterfly.png) |
+| ![SNM Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_snm_hold.png) |
+| ![SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_snm_hold.png) |
 
 ---
 
@@ -94,7 +94,8 @@ SNM evaluated with WL = VDD (access transistors ON). Read disturb degrades the n
 
 | Schematic | Butterfly Curve |
 |-----------|-----------------|
-| ![Read SNM Schematic](results/schematics/snmR_schematic.png) | ![Read SNM Result](results/waveforms/snmR_butterfly.png) |
+| ![Read SNM Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_snmR.png) |
+| ![Read SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_snmR.png) |
 
 ---
 
@@ -104,7 +105,9 @@ The butterfly loop collapses (no eye opening), confirming the cell can be flippe
 
 | Schematic | Butterfly Curve |
 |-----------|-----------------|
-| ![Write SNM Schematic](results/schematics/snmW_schematic.png) | ![Write SNM Result](results/waveforms/snmW_butterfly.png) |
+| ![Write SNM Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_snmW.png) |
+| ![Write SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_write.png) |
+| ![Write SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_write_.png) |
 
 ---
 
@@ -114,7 +117,8 @@ Current vs. voltage sweep for combined read stability and writeability analysis.
 
 | Schematic | N-Curve |
 |-----------|---------|
-| ![N-Curve Schematic](results/schematics/ncurve_schematic.png) | ![N-Curve Result](results/waveforms/ncurve_result.png) |
+| ![N-Curve Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_ncurve.png) |
+| ![N-Curve Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_ncurve.png) |
 
 ---
 
