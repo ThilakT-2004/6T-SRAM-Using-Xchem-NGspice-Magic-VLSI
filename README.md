@@ -100,8 +100,7 @@ The butterfly loop collapses (no eye opening), confirming the cell can be flippe
 
 | Schematic | Butterfly Curve |
 |-----------|-----------------|
-            |-----------------|
-| ![Write SNM Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_snmW.png) | ![Write SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_write.png) | ![Write SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_write_.png) |
+| ![Write SNM Schematic](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Schematics/sram_snmW.png) | ![Write SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_write.png) ![Write SNM Result](6T-SRAM-Using-Xchem-NGspice-Magic-VLSI/Simulation_waveforms/sram_write_.png) |
 
 ---
 
